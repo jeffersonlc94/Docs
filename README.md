@@ -1,10 +1,10 @@
 # Manual de Troca de Domínio Whazing
-
+Antes de fazer o procedimento faça os apontamentos dos domínios para sua vps.
 ## 1. Fazer um backup  SnapShot da sua VPS
 
-## 2. Alterando para root
+## 2. Alterando para deploy
 ```bash
-sudo su root
+sudo su deploy
 ```
 
 ## 3. Parar todos os processos do PM2
@@ -12,7 +12,12 @@ sudo su root
 pm2 stop all
 ```
 
-## 4. Editar o arquivo `.env` do backend
+## 4. Parar serviço nginx
+```bash
+sudo service nginx stop
+```
+
+## 5. Editar o arquivo `.env` do backend
 ```bash
 nano /whazing/backend/.env
 ```
@@ -22,7 +27,7 @@ URL_API='https://backend.seusite.com.br'
 ID_DO_APP_DO_FACEBOOK='23156312477653241'
 ```
 
-## 5. Editar o arquivo `.env` do frontend
+## 6. Editar o arquivo `.env` do frontend
 ```bash
 nano /whazing/frontend/.env
 ```
@@ -35,7 +40,7 @@ BACKEND_URL=https://backend.seusite.com.br
 FRONTEND_URL=https://frontend.seusite.com.br
 ```
 
-## 6. Editar configuração do Nginx para o backend
+## 7. Editar configuração do Nginx para o backend
 ```bash
 sudo nano /etc/nginx/sites-available/whazing-backend
 ```
@@ -76,7 +81,7 @@ server {
 }
 ```
 
-## 7. Editar configuração do Nginx para o frontend
+## 8. Editar configuração do Nginx para o frontend
 ```bash
 sudo nano /etc/nginx/sites-available/whazing-frontend
 ```
@@ -116,16 +121,35 @@ server {
     return 404;
 }
 ```
-## 8. Gerar certificado
+## 9. Gerar certificado
+selecione o dominio (faça isso para os dois domínios, backend e frontend)
 ```bash
 sudo certbot --nginx
 ```
-## 9. Reinicia  VPS
+## 10. Reinicia  VPS
 ```bash
 reboot
 ```
-## 10. Inicia PM2
+## 11. Inicia PM2
 ```bash
 pm2 flush all
 pm2 start all
 ```
+## 12. Se o ngix nao iniciar no reboot
+```bash
+sudo service nginx status
+sudo service nginx start
+```
+## 13. Atualizar o sistema
+Faça a atualização do sistema.
+
+depois limpe os cookies do navegador.
+
+materiais de apoio
+
+https://github.com/cleitonme/Whazing-SaaS/blob/main/docs/INSTALL_VPS_UBUNTU_20_22.md
+
+https://github.com/cleitonme/Whazing-SaaS.instalador
+
+
+
