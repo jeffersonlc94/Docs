@@ -26,7 +26,7 @@ ID_DO_APP_DO_FACEBOOK='23156312477653241'
 ```bash
 nano /whazing/frontend/.env
 ```
-edite seu dominio frontend:
+edite seu dominio frontend e backend:
 ```
 # URL do backend para construção dos hooks
 BACKEND_URL=https://backend.seusite.com.br
