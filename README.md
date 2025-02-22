@@ -124,7 +124,7 @@ sudo certbot --nginx
 ```bash
 reboot
 ```
-## 10. Inicia PM
+## 10. Inicia PM2
 ```bash
 pm2 flush all
 pm2 start all
