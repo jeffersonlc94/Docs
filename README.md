@@ -29,7 +29,7 @@ ID_DO_APP_DO_FACEBOOK='23156312477653241'
 
 ## 6. Editar o arquivo `.env` do frontend
 ```bash
-nano /whazing/frontend/.env
+nano /home/deploy/whazing/frontend/.env
 ```
 edite seu dominio frontend e backend:
 ```
