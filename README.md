@@ -45,7 +45,7 @@ FRONTEND_URL=https://frontend.seusite.com.br
 sudo nano /etc/nginx/sites-available/whazing-backend
 ```
 Altere as linhas `server_name` e `server`   NÃO MODIFIQUE OS SSL pois serao recriados:
-```nginx
+`nginx
 server {
     server_name backend.seusite.com.br;
 
@@ -79,14 +79,14 @@ server {
     listen 80;
     return 404;
 }
-```
+`
 
 ## 8. Editar configuração do Nginx para o frontend
 ```bash
 sudo nano /etc/nginx/sites-available/whazing-frontend
 ```
 Altere  as linhas `server_name` e `server` NÃO MODIFIQUE OS SSL pois serao recriados:
-```nginx
+`nginx
 server {
     server_name frontend.seusite.com.br;
 
@@ -120,7 +120,7 @@ server {
     listen 80;
     return 404;
 }
-```
+`
 ## 9. Gerar certificado
 selecione o dominio (faça isso para os dois domínios, backend e frontend)
 ```bash
