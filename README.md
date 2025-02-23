@@ -19,7 +19,7 @@ sudo service nginx stop
 
 ## 5. Editar o arquivo `.env` do backend
 ```bash
-nano /whazing/backend/.env
+nano /home/deploy/whazing/backend/.env
 ```
 edite seu dominio backend:
 ```env
