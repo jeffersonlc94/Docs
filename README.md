@@ -128,7 +128,7 @@ sudo certbot --nginx
 ```
 ## 10. Reinicia  VPS
 ```bash
-reboot
+sudo reboot
 ```
 ## 11. Inicia PM2
 ```bash
